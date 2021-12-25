@@ -21,7 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: ads_project
-  password: <%= ENV['ADS_DATABASE_PASSWORD'] %>
+  password: 123
 
 development:
   <<: *default
