@@ -10,6 +10,15 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def assign_role
-    self.role = Role.find_by name: 'Admin' if role.nil?
+    self.role = Role.find_by name: 'Seller' if role.nil?
   end
+
+  def admin?
+    role.name == 'Admin'
+  end
+
+  def seller?
+    role.name == 'Seller'
+  end
+
 end
