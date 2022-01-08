@@ -2,16 +2,16 @@
 <% if can? :create, Post %>
   <%= link_to 'New Item', new_post_path %>
 <% end %>
-<%= link_to "Roles", roles_path %>
-<h1>Draft</h1>
 
+<br>
+
+<h1>Draft</h1>
 <% @draft.each do |post| %>
   <tr>
     <td><%= post.title %></td>
     <td><%= post.description %></td>
     <td><%= post.user.name %></td>
     <td><%= link_to 'Show', post %></td>
-    <%= link_to 'Edit', edit_post_path(post) %>
 
     <% if can? :update, post %>
       <%= link_to 'Edit', edit_post_path(post) %>

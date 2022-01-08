@@ -5,8 +5,8 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @post.description %>
+  <strong>Content:</strong>
+  <%= @post.content %>
 </p>
 
 <p>
@@ -14,10 +14,7 @@
   <%= @post.user.name %>
 </p>
 
-<%= @post.content %>
+
 <p id="notice"><%= notice %></p>
 
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', interfaces_path %>
