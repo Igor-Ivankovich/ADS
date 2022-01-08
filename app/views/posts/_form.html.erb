@@ -17,9 +17,10 @@
     </div>
 
     <div class="field">
-      <%= form.label :description %>
-      <%= form.trix_editor :description, required: true, autofocus: true %>
+      <%= form.label :content %>
+      <%= form.rich_text_area :content %>
     </div>
+
   <% end %>
 
   <% if @current_user&.admin? %>
