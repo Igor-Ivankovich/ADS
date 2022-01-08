@@ -1,0 +1,2 @@
+module AdmincasHelper
+end

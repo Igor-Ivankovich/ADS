@@ -1,0 +1,100 @@
+<h1>New Post</h1>
+<% if can? :create, Post %>
+  <%= link_to 'New Item', new_post_path %>
+<% end %>
+<%= link_to "Roles", roles_path %>
+<h1>Draft</h1>
+
+<% @draft.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <%= link_to 'Edit', edit_post_path(post) %>
+
+    <% if can? :update, post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    <% end %>
+    <td>
+      <% if can? :destroy, post %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+
+<h1>Moderation</h1>
+
+<% @moderation.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <% if can? :destroy, post %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+
+<h1>Rejected</h1>
+
+<% @rejected.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+
+<h1>Approved</h1>
+
+<% @approved.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <% if can? :destroy, post %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+
+<h1>Archive</h1>
+
+<% @archive.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>

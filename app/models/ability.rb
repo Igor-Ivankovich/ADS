@@ -7,10 +7,18 @@ class Ability
     if user.nil?
       can :read, Post
     elsif user.admin?
-      can :read, Post
-      can :destroy, Post
+      # can :read, Post
+      # can :destroy, Post
+      can :manage, Post
+      can :manage, Adminca
+      # can :read, Post
+
     elsif user.seller?
+      can :manage, Interface
       can :read, Post
+      can :update, Post do |item|
+        item.try(:post_type) == 'C'
+      end
       can :create, Post
       can :destroy, Post do |item|
         item.try(:user) == user

@@ -1,0 +1,17 @@
+<h1>moderation</h1>
+
+<% @moderation.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <br>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+

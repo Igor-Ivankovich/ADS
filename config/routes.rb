@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :interfaces
   devise_for :users
   scope '/admin' do
     resources :users
+    resources :admincas
   end
   resources :posts
   resources :roles

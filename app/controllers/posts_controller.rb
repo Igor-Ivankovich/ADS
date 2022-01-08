@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 1)
+    @posts = Post.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -62,6 +62,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description, :user_id)
+      params.require(:post).permit(:title, :description, :post_type, :user_id)
     end
 end

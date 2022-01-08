@@ -10,17 +10,29 @@
       </ul>
     </div>
   <% end %>
+  <% unless @current_user&.admin? %>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.trix_editor :description, required: true, autofocus: true %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.trix_editor :description, required: true, autofocus: true %>
-  </div>
-
+  <% if @current_user&.admin? %>
+    <div class="field">
+      <%= form.label :post_type %>
+      <%= form.check_box :post_type, { checked: false }, 'A', 'R' %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.label :post_type %>
+      <%= form.check_box :post_type, { checked: false }, 'M', 'C' %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= form.submit %>
   </div>

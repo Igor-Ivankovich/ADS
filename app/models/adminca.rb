@@ -1,0 +1,2 @@
+class Adminca < ApplicationRecord
+end
