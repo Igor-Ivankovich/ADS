@@ -13,3 +13,8 @@ u2 = User.create({ name: 'Test_user2', email: 'test2@example.com', password: 'qw
 
 p1 = Post.create({ title: 'Test1', description: 'Test!', user_id: u1.id })
 p2 = Post.create({ title: 'Test2', description: 'Test2',  user_id: u2.id })
+
+Tag.create(name: "Recipe")
+Tag.create(name: "Travel")
+Tag.create(name: "Fashion/Beauty")
+Tag.create(name: "Humour")
