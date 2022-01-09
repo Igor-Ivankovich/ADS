@@ -34,8 +34,7 @@
       width: 50%;
       padding: 10px;">
       <!-- News block -->
-      <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
-
+      <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tags_path(t) }.join(', '); %></small></p>
       <div>
         <!-- Article data -->
       </div>
@@ -47,7 +46,6 @@
       <p>
         <%= post.content %>
       </p>
-
 
       <hr/>
       <%= link_to 'Show', post %>

@@ -17,6 +17,7 @@ class Ability
       # can :read, Post
 
     elsif user.seller?
+      can :read, Tag
       can :manage, Interface
       can :read, Post
       can :update, Post do |item|
