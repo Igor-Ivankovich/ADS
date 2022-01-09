@@ -1,17 +1,18 @@
 <h1>moderation</h1>
 
 <% @moderation.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
-<% end %>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
 
+      <section class="p-2 d-flex  w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          </td>
+        </div>
+      </section>
+    </div>
+  </section>
+<% end %>

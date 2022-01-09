@@ -1,6 +1,9 @@
 <h1>Editing Role</h1>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <%= render 'form', role: @role %>
 
-<%= render 'form', role: @role %>
-
-<%= link_to 'Show', @role %> |
-<%= link_to 'Back', roles_path %>
+    <%= link_to 'Show', @role %> |
+    <%= link_to 'Back', roles_path %>
+  </div>
+</div>

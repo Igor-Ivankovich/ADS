@@ -1,35 +1,78 @@
 <h1>Posts</h1>
 
-<table>
-  <tbody>
-  <% @posts.each do |post| %>
-    <% if post.post_type == 'P' %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.user.name %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td>
-          <% if can? :update, post %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-          <% end %>
-        </td>
-        <td>
-          <% if can? :destroy, post %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
-<% if can? :create, Post %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
-<br>
+<!--<table>-->
+<!--  <tbody>-->
+<%# @posts.each do |post| %>
+<%# if post.post_type == 'P' %>
+<!--      <tr>-->
+<!--        <td><%#= post.title %></td>-->
+<!--        <td><%#= post.content %></td>-->
+<!--        <td><%#= post.user.name %></td>-->
+<!--        <td><%#= link_to 'Show', post %></td>-->
+<!--        <td>-->
+<%# if can? :update, post %>
+<%#= link_to 'Edit', edit_post_path(post) %>
+<%# end %>
+<!--        </td>-->
+<!--        <td>-->
+<%# if can? :destroy, post %>
+<%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%# end %>
+<!--        </td>-->
+<!--      </tr>-->
+<%# end %>
+<%# end %>
+<!--  </tbody>-->
+<!--</table>-->
 
-<div class="apple_pagination">
-  <%= will_paginate @posts, :container => false %>
-</div>
+<br>
+<% @posts.each do |post| %>
+
+  <section class="" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;margin:0 50px 0 50px;//top right bottom left">
+
+    <div class="card px-3 pt-3" style="max-width: 32rem;    margin: auto;
+      width: 50%;
+      padding: 10px;">
+      <!-- News block -->
+      <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
+
+      <div>
+        <!-- Article data -->
+      </div>
+
+      <!-- Article title and description -->
+
+      <h5><%= post.title %></h5>
+
+      <p>
+        <%= post.content %>
+      </p>
+
+
+      <hr/>
+      <%= link_to 'Show', post %>
+      <td>
+        <% if can? :update, post %>
+          <a href=<%= edit_post_path(post) %>>Edit Post</a>
+          <%= link_to 'Edit', edit_post_path(post) %>
+        <% end %>
+
+        <% if can? :destroy, post %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </td>
+
+    </div>
+    <!-- News block -->
+    <br>
+
+
+  </section>
+<% end %>
+
+  <nav class="my-4" >
+    <ul class="pagination pagination-circle justify-content-center">
+      <%= will_paginate @posts, :container => false %>
+    </ul>
+  </nav>
 

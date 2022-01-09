@@ -1,18 +1,21 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <p>
+      <strong>Name:</strong>
+      <%= @role.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @role.name %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @role.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @role.description %>
-</p>
+    <p>
+      <strong>Assosciated users:</strong>
+      <%= @assosciated_users %>
+    </p>
 
-<p>
-  <strong>Assosciated users:</strong>
-  <%= @assosciated_users %>
-</p>
-
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+    <%= link_to 'Edit', edit_role_path(@role) %> |
+    <%= link_to 'Back', roles_path %>
+  </div>
+</div>

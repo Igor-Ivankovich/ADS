@@ -1,4 +1,4 @@
-<%= form_with(model: post) do |form| %>
+<%= simple_form_for @post, url: posts_path do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -33,14 +33,17 @@
       <%= form.label :post_type %>
       <%= form.check_box :post_type, { checked: false }, 'M', 'C' %>
     </div>
+
+    <%= form.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: { multiple: true } %>
+    <div style="
+    margin-left: 0px;">
+
+    </div>
+    <%= form.submit "Draft", class: 'btn btn-lg btn-primary float-right' %>
   <% end %>
 
-  <%= simple_form_for @post, url: posts_path do |f| %>
-        <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: { multiple: true } %>
-    <%= f.submit "Next", class: 'btn btn-lg btn-primary float-right' %>
-  <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+
 <% end %>
+

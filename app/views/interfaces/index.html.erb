@@ -7,94 +7,103 @@
 
 <h1>Draft</h1>
 <% @draft.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
 
-    <% if can? :update, post %>
-      <%= link_to 'Edit', edit_post_path(post) %>
-    <% end %>
-    <td>
-      <% if can? :destroy, post %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </td>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
+      <section class="p-2 d-flex  w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+
+          <% if can? :update, post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+          <td>
+            <% if can? :destroy, post %>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
+        </div>
+      </section>
+    </div>
+  </section>
 <% end %>
 
 <h1>Moderation</h1>
 
 <% @moderation.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <% if can? :destroy, post %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
+
+      <section class="p-2 d-flex  w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+          <% if can? :destroy, post %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </section>
 <% end %>
 
 <h1>Rejected</h1>
 
 <% @rejected.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
+
+      <section class="p-2 d-flex w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+        </div>
+      </section>
+    </div>
+  </section>
 <% end %>
 
 <h1>Approved</h1>
 
+
+
+
 <% @approved.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <% if can? :destroy, post %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
+
+      <section class="p-2 d-flex w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+          <% if can? :destroy, post %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </section>
 <% end %>
 
 <h1>Archive</h1>
 
 <% @archive.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <br>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
+  <section class="pb-4">
+    <div class="bg-white border rounded-5">
+
+      <section class="p-2 d-flex w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+        <!--Section: News of the day-->
+        <div class="col-md-2 mb-2">
+          <h4><strong>Post: <%= post.title %></strong></h4>
+          <td><%= link_to 'Show', post %></td>
+        </div>
+      </section>
+    </div>
+  </section>
+
 <% end %>
