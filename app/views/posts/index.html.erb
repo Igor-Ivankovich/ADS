@@ -34,7 +34,7 @@
       width: 50%;
       padding: 10px;">
       <!-- News block -->
-      <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tags_path(t) }.join(', '); %></small></p>
+      <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, ftags_path(t) }.join(', '); %></small></p>
       <div>
         <!-- Article data -->
       </div>
