@@ -24,7 +24,7 @@ class Ability
       can :manage, Interface
       can :read, Post
       can :update, Post do |item|
-        item.try(:post_type) == 'C'
+        item.try(:post_type) == 'C' || item.try(:post_type) == 'AR' || item.try(:post_type) == 'R'
       end
       can :create, Post
       can :destroy, Post do |item|

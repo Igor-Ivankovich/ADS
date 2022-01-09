@@ -61,6 +61,12 @@
         <div class="col-md-2 mb-2">
           <h4><strong>Post: <%= post.title %></strong></h4>
           <td><%= link_to 'Show', post %></td>
+          <% if can? :update, post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+          <% if can? :destroy, post %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </div>
       </section>
     </div>
@@ -68,9 +74,6 @@
 <% end %>
 
 <h1>Approved</h1>
-
-
-
 
 <% @approved.each do |post| %>
   <section class="pb-4">
@@ -101,6 +104,12 @@
         <div class="col-md-2 mb-2">
           <h4><strong>Post: <%= post.title %></strong></h4>
           <td><%= link_to 'Show', post %></td>
+          <% if can? :update, post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+          <% if can? :destroy, post %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </div>
       </section>
     </div>
