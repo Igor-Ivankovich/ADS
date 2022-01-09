@@ -13,6 +13,7 @@ class Ability
       can :manage, Adminca
       can :manage, User
       can :manage, Role
+      can :manage, Tag
       # can :read, Post
 
     elsif user.seller?

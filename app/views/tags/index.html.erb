@@ -1,0 +1,27 @@
+
+<h1>Tags</h1>
+
+<table>
+  <tbody>
+  <% @tags.each do |tag| %>
+    <section class="pb-4">
+      <div class="bg-white border rounded-5">
+
+        <section class="p-2 d-flex  w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
+          <!--Section: News of the day-->
+          <div class="col-md-2 mb-2">
+            <h4><strong>Post: <%= tag.name %></strong></h4>
+
+           </div>
+        </section>
+      </div>
+    </section>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tag', new_tag_path %>
+
+

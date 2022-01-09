@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     flash[:error] = 'Access denied!'
     redirect_to root_url
   end
+  rescue_from ActiveRecord::RecordNotUnique  do
+    flash[:error] = 'NotUnique'
+    redirect_to new_tag_path
+  end
 
   protected
 

@@ -37,6 +37,7 @@
                 <li><a class="dropdown-item" href=<%= admincas_path %>>Adminca</a></li>
                 <li><a class="dropdown-item" href=<%= users_path %>>Change Users</a></li>
                 <li><a class="dropdown-item" href=<%= roles_path %>>Change Roles</a></li>
+                <li><a class="dropdown-item" href=<%= tags_path %>>Change Tags</a></li>
               <% end %>
               <li><a class="dropdown-item" href=<%= edit_user_registration_path %>>Edit profile</a></li>
               <li>
@@ -107,10 +108,8 @@
 </body>
 </html>
 <script>
-    $(document).on('ready page:load', function () {
-        $('#post_tag_ids').chosen({
-            allow_single_deselect: true,
-            width: '100%'
-        })
-    });
+    $('#post_tag_ids').chosen({
+        allow_single_deselect: true,
+        width: '100%'
+    })
 </script>
