@@ -1,7 +1,8 @@
 class TagsController < ApplicationController
   load_and_authorize_resource
   def index
-    @tag = Role.all
+    @tags = Tag.all
+    @taging = Tagging.all
   end
 
   # GET /roles/1 or /roles/1.json
@@ -49,7 +50,7 @@ class TagsController < ApplicationController
     @tag.destroy
 
     respond_to do |format|
-      format.html { redirect_to tag_url, notice: "Role was successfully destroyed." }
+      format.html { redirect_to tags_url, notice: "Role was successfully destroyed." }
       format.json { head :no_content }
     end
   end

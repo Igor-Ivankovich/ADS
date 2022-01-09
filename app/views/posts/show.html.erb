@@ -5,8 +5,9 @@
       width: 50%;
       padding: 10px;">
       <!-- News block -->
-      <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
-
+      <% if @post.tags.any? %>
+        <p><small>Tags: <%= raw @post.tags.map(&:name).map { |t| link_to t, ftags_path(t) }.join(', '); %></small></p>
+      <% end %>
       <div>
         <!-- Article data -->
       </div>
@@ -19,8 +20,8 @@
         <%= @post.content %>
       </p>
 
-      <strong>User:</strong>
-      <%= @post.user.name %>
+      <strong>User: <%= @post.user.name %></strong>
+
       <hr/>
 
     </div>
@@ -32,4 +33,4 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', interfaces_path %>
+

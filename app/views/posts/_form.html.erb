@@ -1,4 +1,4 @@
-<%= simple_form_for @post, url: posts_path do |form| %>
+<%= simple_form_for @post, url: post_path do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
   <% unless @current_user&.admin? %>
     <div class="field">
       <%= form.label :title %>
@@ -21,28 +22,25 @@
       <%= form.rich_text_area :content %>
     </div>
 
+    <%= form.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: { multiple: true } %>
+
+    <br>
   <% end %>
 
   <% if @current_user&.admin? %>
+
     <div class="field">
-      <%= form.label :post_type %>
+      <%= form.label :approved %>
       <%= form.check_box :post_type, { checked: false }, 'A', 'R' %>
     </div>
   <% else %>
     <div class="field">
-      <%= form.label :post_type %>
+      <%= form.label :add_to_moderation %>
       <%= form.check_box :post_type, { checked: false }, 'M', 'C' %>
     </div>
-
-    <%= form.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: { multiple: true } %>
-    <div style="
-    margin-left: 0px;">
-
-    </div>
-    <%= form.submit "Draft", class: 'btn btn-lg btn-primary float-right' %>
   <% end %>
 
-
+  <%= form.submit "Draft", class: 'btn btn-lg btn-primary float-right' %>
 
 
 <% end %>

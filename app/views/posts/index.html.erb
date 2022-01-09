@@ -34,7 +34,9 @@
       width: 50%;
       padding: 10px;">
       <!-- News block -->
-      <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, ftags_path(t) }.join(', '); %></small></p>
+      <% if post.tags.any? %>
+        <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, ftags_path(t) }.join(', '); %></small></p>
+      <% end %>
       <div>
         <!-- Article data -->
       </div>
@@ -68,9 +70,9 @@
   </section>
 <% end %>
 
-  <nav class="my-4" >
-    <ul class="pagination pagination-circle justify-content-center">
-      <%= will_paginate @posts, :container => false %>
-    </ul>
-  </nav>
+<nav class="my-4">
+  <ul class="pagination pagination-circle justify-content-center">
+    <%= will_paginate @posts, :container => false %>
+  </ul>
+</nav>
 

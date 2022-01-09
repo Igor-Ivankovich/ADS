@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
-
   load_and_authorize_resource
 
   # GET /posts or /posts.json
   def index
-
     params[:tag] ? @posts = Post.tagged_with(params[:tag]).where(post_type: "P").paginate(page: params[:page], per_page: 3) : @posts = Post.where(post_type: "P").paginate(page: params[:page], per_page: 3)
   end
 

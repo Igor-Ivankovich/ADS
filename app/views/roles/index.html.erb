@@ -1,6 +1,6 @@
 
 <h1>Roles</h1>
-
+<%= link_to 'New Role', new_role_path %>
 <table>
   <tbody>
     <% @roles.each do |role| %>
@@ -10,8 +10,7 @@
         <section class="p-2 d-flex  w-100" style="background-color: #fbfbfb; border-radius: .5rem .5rem 0 0;">
           <!--Section: News of the day-->
           <div class="col-md-2 mb-2">
-            <h4><strong>Post: <%= role.name %></strong></h4>
-            <h4>Role: <%= role.description %></h4>
+            <h4><strong>Role: <%= role.name %></strong></h4>
             <%= link_to 'Show', role %>
             <%= link_to 'Edit', edit_role_path(role) %>
             <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -24,7 +23,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Role', new_role_path %>
-
-

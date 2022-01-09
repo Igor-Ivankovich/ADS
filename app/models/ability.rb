@@ -9,7 +9,10 @@ class Ability
     elsif user.admin?
       # can :read, Post
       # can :destroy, Post
-      can :manage, Post
+      can :read, Post
+      can :update, Post do |item|
+        item.try(:post_type) == 'M'
+      end
       can :manage, Adminca
       can :manage, User
       can :manage, Role
