@@ -213,6 +213,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -224,6 +226,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    state_machine (1.2.0)
     thor (1.1.0)
     tilt (2.0.10)
     trix-rails (2.4.0)
@@ -280,8 +283,10 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers
   simple_form
   spring
+  state_machine
   trix-rails
   turbolinks (~> 5)
   tzinfo-data

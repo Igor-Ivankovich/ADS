@@ -5,6 +5,10 @@ class Post < ApplicationRecord
   has_many :tags, through: :taggings
   before_save :assign_post_type
 
+  validates :title, presence: true, length: { in: 10..100 }
+  validates :content, presence: true
+  validates :post_type, presence: true
+
   def assign_post_type
     self.post_type = 'C' if post_type.nil?
   end

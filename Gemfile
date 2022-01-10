@@ -30,6 +30,8 @@ source 'https://rails-assets.org' do
 end
 gem 'simple_form'
 gem 'rspec-rails'
+gem 'shoulda-matchers'
+gem 'state_machine'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
