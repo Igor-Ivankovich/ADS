@@ -1,4 +1,4 @@
-<%= form_with(model: role) do |form| %>
+<%= simple_form_for @role do |form| %>
   <% if role.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
