@@ -21,3 +21,6 @@ The logic of post moderation was implemented in a simple way of transmitting the
     @approved = Post.where(post_type: 'A', user_id: current_user.id)
     @archive = Post.where(post_type: 'AR', user_id: current_user.id)
 ```
+
+Heroku:
+https://stormy-journey-16747.herokuapp.com/posts
