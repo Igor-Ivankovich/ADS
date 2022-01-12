@@ -1,24 +1,23 @@
-# README
+**Project ADS**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Credential**:
 
-Things you may want to cover:
+  **Admin**:
+    email: test@example.com
+    password: qwerty
+    
+  **Seller**:
+    email: test2@example.com
+    password: qwerty
 
-* Ruby version
 
-* System dependencies
+**Post moderation logic**
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The logic of post moderation was implemented in a simple way of transmitting the necessary string:
+```
+    @draft = Post.where(post_type: 'C', user_id: current_user.id)
+    @moderation = Post.where(post_type: 'M', user_id: current_user.id)
+    @rejected = Post.where(post_type: 'R', user_id: current_user.id)
+    @approved = Post.where(post_type: 'A', user_id: current_user.id)
+    @archive = Post.where(post_type: 'AR', user_id: current_user.id)
+```
